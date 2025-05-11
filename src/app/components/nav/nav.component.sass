@@ -1,0 +1,47 @@
+@use '../../../styles.sass'
+
+.nav-container
+  background-color: styles.$white
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05)
+  position: fixed
+  width: 100%
+  top: 0
+  z-index: 10
+
+  .container
+    max-width: 80rem
+    margin-left: auto
+    margin-right: auto
+    padding-left: 1rem
+    padding-right: 1rem
+
+    .header
+      display: flex
+      justify-content: space-between
+      height: 4rem
+
+      .home
+        display: flex
+        align-items: center
+
+        .home-link
+          font-size: 1.25rem
+          text-decoration: none
+          font-weight: bold
+          color: #1f2937
+
+      .nav-items
+        display: flex
+        align-items: center
+        gap: 2rem
+
+        .item-link
+          color: #4b5563
+          padding: 0.5rem 0.75rem
+          font-size: 0.875rem
+          font-weight: 500
+          text-decoration: none
+
+          &:hover
+            color: #111827;
+            text-decoration: underline

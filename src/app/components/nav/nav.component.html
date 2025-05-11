@@ -1,0 +1,24 @@
+<nav class="nav-container">
+  <div class="container">
+    <div class="header">
+      <div class="home">
+        <a class="home-link" href="#">Walid Daoud</a>
+      </div>
+      <div class="nav-items">
+        <div class="nav-links">
+          <a
+            *ngFor="let item of navItems"
+            href="{{ item.href }}"
+            class="item-link"
+          >
+          {{ item.name }}
+          </a>
+        </div>
+      </div>
+      <!-- <div class="options">
+        <button (click)="toggleTheme()" class="theme-toggle"></button>
+        <i [ngClass]="darkMode ? 'fa-regular fa-sun' : 'fa-regular fa-moon'"></i>
+      </div> -->
+    </div>
+  </div>
+</nav>

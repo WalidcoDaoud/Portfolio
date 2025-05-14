@@ -1,0 +1,108 @@
+@use '../../../../styles.sass'
+
+.about-container
+  background-color: styles.$background-color
+
+  .container
+    padding: 30px 80px
+
+    .title-container
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+
+      .title
+        font-size: 36px
+        color: styles.$subtitle-color
+        margin: 0
+        font-weight: 700
+
+      .blue-line
+        margin-top: 0.5rem
+        height: 0.25rem
+        width: 5rem
+        background-color: styles.$primary-color
+        margin-left: auto
+        margin-right: auto
+
+    .profile-section
+      display: flex
+      flex-direction: row
+      gap: 100px
+
+      .story-container
+        width: 100%
+
+        .story-title
+          font-size: 1.5rem
+          font-weight: 600
+          color: styles.$subtitle-color
+          margin-bottom: 1rem
+
+        .story-text
+          color: styles.$subtitle-description-color
+          margin-bottom: 1rem
+
+          &:last-child
+            margin-bottom: 0
+
+      .experience-container
+        width: 100%
+
+        .section-title
+          font-size: 1.5rem
+          font-weight: 600
+          color: styles.$subtitle-color
+          margin-bottom: 1rem
+
+        .experience-list
+          display: flex
+          flex-direction: column
+          gap: 1.5rem
+
+          .experience-item
+            display: flex
+
+            .experience-icon-wrapper
+              margin-right: 1rem
+              flex-shrink: 0
+
+              .experience-icon
+                height: 3rem
+                width: 3rem
+                display: flex
+                align-items: center
+                justify-content: center
+                border-radius: 9999px
+                background-color: styles.$icon-background-color
+
+                .icon-blue
+                  color: styles.$primary-color
+                  font-size: 24px
+
+            .experience-section
+              width: 100%
+
+              .experience-title
+                font-size: 1.125rem
+                font-weight: 500
+                color: styles.$subtitle-color
+                margin: 0
+
+              .experience-meta
+                display: flex
+                align-items: center
+                color: styles.$experience-subtitle-color
+                font-size: 0.875rem
+                margin-bottom: 0.25rem
+
+                .dot
+                  margin-left: 0.5rem
+                  margin-right: 0.5rem
+
+                .calendar-icon
+                  margin-right: 0.25rem
+
+              .experience-description
+                color: styles.$subtitle-description-color

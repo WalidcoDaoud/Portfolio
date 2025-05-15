@@ -1,1 +1,23 @@
-<p>skills works!</p>
+<section class="skills-section">
+  <div class="container">
+    <h2 class="title">My Skills</h2>
+    <div class="blue-line"></div>
+    <div class="technical-skills-section">
+      <h3 class="technical-skills-title">Technical Skills</h3>
+      <div class="skills-grid">
+        <div *ngFor="let skill of technicalSkills" class="skill-card">
+          <div class="skill-header">
+            <span class="skill-name">{{ skill.name }}</span>
+            <span class="skill-level">{{ skill.level }}%</span>
+          </div>
+          <div class="skill-bar-background">
+            <div
+              class="skill-bar-fill"
+              [ngStyle]="{ width: skill.level + '%' }"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

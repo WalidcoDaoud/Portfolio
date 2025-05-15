@@ -1,0 +1,68 @@
+@use '../../../../styles.sass'
+
+.skills-section
+  max-width: 80rem
+  margin: 0 auto
+  padding: 80px
+
+  .container
+    text-align: center
+    margin-bottom: 3rem
+
+    .title
+      font-size: 2.25rem
+      color: styles.$subtitle-color
+      margin: 0
+      font-weight: 700
+
+    .blue-line
+      margin-top: 0.5rem
+      height: 0.25rem
+      width: 5rem
+      background-color: styles.$primary-color
+      margin-left: auto
+      margin-right: auto
+
+    .technical-skills-section
+      margin-bottom: 4rem
+
+      .technical-skills-title
+        font-size: 2rem
+        font-weight: 600
+        color: styles.$technical-description-color
+        margin-bottom: 2rem
+        text-align: center
+
+      .skills-grid
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        gap: 2rem
+
+        .skill-card
+          background-color: styles.$background-color
+          padding: 1rem
+          border-radius: 0.5rem
+
+          .skill-header
+            display: flex
+            justify-content: space-between
+            margin-bottom: 0.5rem
+
+            .skill-name
+              color: styles.$technical-description-color
+              font-weight: 500
+
+            .skill-level
+              color: styles.$subtitle-description-color
+
+          .skill-bar-background
+            width: 100%
+            background-color: styles.$technical-description-background-color
+            border-radius: 9999px
+            height: 0.625rem
+
+            .skill-bar-fill
+              background-color: styles.$primary-color
+              height: 0.625rem
+              border-radius: 9999px
+              transition: width 0.3s ease

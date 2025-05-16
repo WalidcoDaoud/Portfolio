@@ -6,24 +6,38 @@ import { Component } from '@angular/core';
   imports: [CommonModule],
   standalone: true,
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.sass'
+  styleUrl: './skills.component.sass',
 })
 export class SkillsComponent {
   technicalSkills = [
-    { name: 'HTML & CSS', level: 100 },
-    { name: 'JavaScript', level: 100 },
-    { name: 'TypeScript', level: 90 },
-    { name: 'React', level: 90 },
-    { name: 'Angular', level: 90 },
-    { name: 'C#', level: 60 },
-    { name: 'Sass / SCSS', level: 100},
-    { name: 'Material UI', level: 70},
-    { name: 'Node.js', level: 50},
-    { name: 'Bootstrap', level: 70},
-    { name: 'RESTful APIs', level: 70},
-    { name: 'SQL Server Management Studio', level: 70},
-    { name: 'MongoDB', level: 70},
-    { name: 'Azure', level: 70},
-    { name: 'CI/CD', level: 80},
+    { name: 'HTML & CSS', level: 'Advanced' },
+    { name: 'JavaScript', level: 'Advanced' },
+    { name: 'TypeScript', level: 'Advanced' },
+    { name: 'React', level: 'Advanced' },
+    { name: 'Angular', level: 'Advanced' },
+    { name: 'C#', level: 'Intermediate' },
+    { name: '.NET', level: 'Intermediate' },
+    { name: 'Sass / SCSS', level: 'Advanced' },
+    { name: 'Material UI', level: 'Intermediate' },
+    { name: 'Node.js', level: 'Basic' },
+    { name: 'Bootstrap', level: 'Intermediate' },
+    { name: 'RESTful APIs', level: 'Intermediate' },
+    { name: 'SSMS', level: 'Intermediate' },
+    { name: 'MongoDB', level: 'Intermediate' },
+    { name: 'Azure', level: 'Intermediate' },
+    { name: 'CI/CD', level: 'Intermediate' },
   ];
+
+  getSkillWidth(level: string): string {
+    switch (level.toLowerCase()) {
+      case 'basic':
+        return '40%';
+      case 'intermediate':
+        return '70%';
+      case 'advanced':
+        return '90%';
+      default:
+        return '0%';
+    }
+  }
 }

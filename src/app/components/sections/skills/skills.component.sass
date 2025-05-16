@@ -35,34 +35,45 @@
 
       .skills-grid
         display: grid
-        grid-template-columns: 1fr 1fr 1fr
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
         gap: 2rem
+        padding: 1rem
 
         .skill-card
           background-color: styles.$background-color
-          padding: 1rem
+          padding: 1.25rem
           border-radius: 0.5rem
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05)
+          transition: transform 0.2s ease
+
+          &:hover
+            transform: translateY(-4px)
 
           .skill-header
             display: flex
             justify-content: space-between
-            margin-bottom: 0.5rem
+            align-items: center
+            margin-bottom: 0.75rem
 
             .skill-name
               color: styles.$technical-description-color
               font-weight: 500
+              font-size: 1rem
 
             .skill-level
               color: styles.$subtitle-description-color
+              font-size: 0.875rem
+              font-weight: 500
 
           .skill-bar-background
             width: 100%
             background-color: styles.$technical-description-background-color
             border-radius: 9999px
             height: 0.625rem
+            overflow: hidden
 
             .skill-bar-fill
-              background-color: styles.$primary-color
-              height: 0.625rem
+              background: linear-gradient(90deg, styles.$primary-color, lighten(styles.$primary-color, 10%))
+              height: 100%
               border-radius: 9999px
-              transition: width 0.3s ease
+              transition: width 0.4s ease-in-out

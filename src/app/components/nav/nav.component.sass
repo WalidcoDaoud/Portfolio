@@ -1,8 +1,10 @@
-@use '../../../styles.sass'
+@use '../../../styles.sass' as nav
+@use 'sass:color'
 
 .nav-container
-  background-color: styles.$white
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05)
+  background-color: nav.$nav-bg
+  box-shadow: nav.$nav-shadow
+  border-bottom: nav.$nav-border
   position: fixed
   width: 100%
   top: 0
@@ -10,15 +12,14 @@
 
   .container
     max-width: 80rem
-    margin-left: auto
-    margin-right: auto
-    padding-left: 1rem
-    padding-right: 1rem
+    margin: 0 auto
+    padding: 0 1rem
 
     .header
       display: flex
       justify-content: space-between
-      height: 4rem
+      align-items: center
+      height: 3.5rem
 
       .home
         display: flex
@@ -27,21 +28,45 @@
         .home-link
           font-size: 1.25rem
           text-decoration: none
-          font-weight: bold
-          color: #1f2937
+          font-weight: 800
+          color: nav.$nav-brand-text
+          transition: color 0.15s ease-out
+
+          &:hover
+            color: nav.$nav-brand-text-hover
 
       .nav-items
         display: flex
         align-items: center
-        gap: 2rem
+        gap: 1.5rem
 
-        .item-link
-          color: #4b5563
-          padding: 0.5rem 0.75rem
-          font-size: 0.875rem
-          font-weight: 500
-          text-decoration: none
+        .nav-links
+          display: flex
+          gap: 1rem
 
-          &:hover
-            color: #111827;
-            text-decoration: underline
+          .item-link
+            color: nav.$nav-link-text
+            padding: 0.5rem 1rem
+            font-size: 0.875rem
+            font-weight: 500
+            text-decoration: none
+            border-radius: 4px
+            background-color: transparent
+            transform: translateY(0)
+            transition: color 0.15s ease-out, background-color 0.15s ease-out, transform 0.15s ease-out
+
+            &:hover
+              color: nav.$nav-link-text-hover
+              background-color: nav.$nav-link-bg-hover
+              transform: translateY(-1px)
+              transition-duration: 0.1s
+
+            &:focus
+              outline: nav.$nav-focus-ring
+              outline-offset: 2px
+
+            &:active
+              background-color: color.adjust(nav.$technical-description-background-color, $lightness: -5%)
+              transition-duration: 0.05s
+              transform: translateY(0) scale(0.98)
+

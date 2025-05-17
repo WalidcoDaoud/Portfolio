@@ -1,20 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-nav',
+  standalone: true,
   imports: [CommonModule],
+  providers: [ScrollService],
   templateUrl: './nav.component.html',
-  styleUrl: './nav.component.sass'
+  styleUrl: './nav.component.sass',
 })
 export class NavComponent {
-
-  darkMode = false;
-
   navItems = [
     {
       name: 'Home',
-      href: '#',
+      href: '#header',
     },
     {
       name: 'About',
@@ -32,7 +32,19 @@ export class NavComponent {
       name: 'Contact',
       href: '#contact',
     },
-  ]
+  ];
+  // darkMode = false;
+
+  constructor(private scrollService: ScrollService) {}
+
+  scrollWithOffset(event: Event, href: string): void {
+  event.preventDefault();
+  const elementId = href.replace('#', '');
+
+  const extraOffset = 40;
+
+  this.scrollService.scrollToElementById(elementId, extraOffset);
+}
 
   // toggleTheme() {
   //   this.darkMode = !this.darkMode

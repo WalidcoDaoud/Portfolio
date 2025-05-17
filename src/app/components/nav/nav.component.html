@@ -9,6 +9,7 @@
           <a
             *ngFor="let item of navItems"
             href="{{ item.href }}"
+            (click)="scrollWithOffset($event, item.href)"
             class="item-link"
           >
           {{ item.name }}

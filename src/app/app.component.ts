@@ -14,7 +14,7 @@ import { NavComponent } from "./components/nav/nav.component";
     HeaderComponent,
     AboutComponent,
     SkillsComponent,
-    ProjectsComponent,
+    // ProjectsComponent,
     ContactComponent,
     FooterComponent,
     NavComponent

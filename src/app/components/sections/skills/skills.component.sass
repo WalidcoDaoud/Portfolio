@@ -1,11 +1,12 @@
 @use '../../../../styles.sass'
+@use 'sass:color'
 
 .skills-section
   max-width: 80rem
   margin: 0 auto
   padding: 5rem
 
-  .container
+  .skills-container
     text-align: center
     margin-bottom: 3rem
 
@@ -15,13 +16,11 @@
       margin: 0
       font-weight: 700
 
-    .blue-line
-      margin-top: 0.5rem
+    .line
+      margin: 0.5rem auto 1rem auto
       height: 0.25rem
       width: 5rem
       background-color: styles.$primary-color
-      margin-left: auto
-      margin-right: auto
 
     .technical-skills-section
       margin-bottom: 4rem
@@ -73,7 +72,7 @@
             overflow: hidden
 
             .skill-bar-fill
-              background: linear-gradient(90deg, styles.$primary-color, lighten(styles.$primary-color, 10%))
+              background: linear-gradient(90deg, styles.$primary-color, color.adjust(styles.$primary-color, $lightness: 10%))
               height: 100%
               border-radius: 9999px
               transition: width 0.4s ease-in-out

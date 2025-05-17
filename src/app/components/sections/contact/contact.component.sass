@@ -1,54 +1,198 @@
 @use '../../../../styles'
 
 .contact-section
-  max-width: 100rem
-  margin: 0 auto
-  padding: 5rem
+  padding: 4rem 0
+  background-color: styles.$background-color
 
   .contact-container
-    text-align: center
+    max-width: 80rem
+    margin-left: auto
+    margin-right: auto
+    padding-left: 1rem
+    padding-right: 1rem
 
     .contact-header
       margin-bottom: 3rem
+      text-align: center
 
       .title
-        font-size: 2.25rem
+        font-size: 1.875rem
+        line-height: 2.25rem
         color: styles.$subtitle-color
-        margin: 0
         font-weight: 700
 
       .line
+        margin-top: 0.5rem
         height: 0.25rem
         width: 5rem
+        margin-left: auto
+        margin-right: auto
         background-color: styles.$primary-color
-        margin: 0.5rem auto 1rem auto
 
       .contact-text
-        font-size: 28px
-        font-weight: 500
+        margin-top: 1rem
+        font-size: 1.125rem
+        line-height: 1.75rem
+        max-width: 42rem
+        margin-left: auto
+        margin-right: auto
         color: styles.$subtitle-description-color
 
-  .contact-body
+  .contact-content
     display: flex
     flex-direction: row
     width: 100%
+    gap: 8rem
 
-    .contact-information
-      width: 40%
-      background-color: styles.$background-color
+    .contact-info
+      width: 30%
 
-      .information-container
+      .info-card
+        background-color: styles.$white
+        padding: 1.5rem
+        border-radius: 0.5rem
+        height: 90%
 
-        .info-container
+        h3
+          font-size: 1.25rem
+          line-height: 1.75rem
+          font-weight: 600
+          color: styles.$subtitle-color
+          margin-bottom: 1.5rem
 
-          .icon-circle
-            height: 3rem
-            width: 3rem
+        .info-items
+          display: flex
+          flex-direction: column
+          gap: 1.5rem
+
+          .info-item
             display: flex
-            align-items: center
-            justify-content: center
-            border-radius: 9999px
-            background-color: styles.$icon-background-color
+            align-items: flex-start
 
-    .contact-message
-      width: 60%
+            .icon-circle
+              flex-shrink: 0
+              height: 2.5rem
+              width: 2.5rem
+              display: flex
+              align-items: center
+              justify-content: center
+              border-radius: 9999px
+              background-color: styles.$icon-background-color
+
+              .icon
+                color: styles.$primary-color
+
+            .info-text
+              margin-left: 1rem
+
+              p
+                font-size: 0.875rem
+                line-height: 1.25rem
+                font-weight: 500
+                color: styles.$subtitle-color
+
+              a, .text
+                font-size: 0.875rem
+                line-height: 1.25rem
+                text-decoration: none
+                color: styles.$subtitle-description-color
+                transition: color 0.2s ease
+
+                &:hover
+                  color: styles.$primary-color
+
+        .social-section
+          margin-top: 2rem
+
+          h4
+            font-size: 1rem
+            line-height: 1.5rem
+            font-weight: 500
+            margin-bottom: 1rem
+            color: styles.$subtitle-color
+
+          .social-icons
+            display: flex
+            gap: 1rem
+
+            a
+              color: styles.$subtitle-description-color
+              transition: color 0.2s ease
+              font-size: 1.5rem
+
+              &:hover
+                &.linkedin
+                  color: styles.$linkedin-contact-icon
+
+                &.github
+                  color: styles.$subtitle-color
+
+                &:not(.github):not(.linkedin)
+                  color: styles.$primary-color
+
+              .icon
+                height: 1.5rem
+                width: 1.5rem
+
+    .contact-form
+      width: 70%
+
+      form
+        background-color: styles.$white
+        padding: 1.5rem
+        border-radius: 0.5rem
+        height: 90%
+
+        h3
+          font-size: 1.25rem
+          line-height: 1.75rem
+          font-weight: 600
+          margin-bottom: 1.5rem
+          color: styles.$subtitle-color
+
+        .form-group
+          margin-bottom: 1.5rem
+          padding-right: 2rem
+
+          label
+            display: block
+            font-size: 0.875rem
+            line-height: 1.25rem
+            font-weight: 500
+            color: styles.$job-color
+            margin-bottom: 0.25rem
+
+          input, textarea
+            width: 100%
+            padding: 0.5rem 0.75rem
+            border: 1px solid styles.$secondary-border-color
+            border-radius: 0.375rem
+            outline: none
+            transition: all 0.2s ease
+
+            &:focus
+              border-color: transparent
+              box-shadow: 0 0 0 2px styles.$contact-box-shadow
+
+          textarea
+            min-height: 8rem
+            resize: vertical
+
+        .submit-button
+          display: flex
+          align-items: center
+          justify-content: center
+          padding: 0.75rem 1.5rem
+          background-color: styles.$primary-color
+          color: styles.$white
+          border-radius: 0.5rem
+          font-weight: 500
+          transition: background-color 0.2 ease
+          width: 100%
+
+          &:hover:not(:disabled)
+            background-color: styles.$linkedin-contact-icon
+
+          &:disabled
+            opacity: 0.7
+            cursor: not-allowed

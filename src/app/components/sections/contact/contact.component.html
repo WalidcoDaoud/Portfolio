@@ -1,62 +1,103 @@
 <section class="contact-section" id="contact">
   <div class="contact-container">
+
     <div class="contact-header">
       <h2 class="title">Get In Touch</h2>
       <div class="line"></div>
-      <p class="contact-text">Have a question or want to work together? Feel free to contact me!</p>
+      <p class="contact-text">
+        Have a question or want to work together? Feel free to contact me!
+      </p>
     </div>
-    <div class="contact-body">
-      <div class="contact-information">
-        <h3>Contact Information</h3>
-        <div class="information-container">
-          <div class="info-container">
-            <div class="icon-circle">
-              <i class="bi bi-envelope icon"></i>
+
+    <div class="contact-content">
+
+      <div class="contact-info">
+        <div class="info-card">
+          <h3>Contact Info</h3>
+
+          <div class="info-items">
+            <div class="info-item">
+              <div class="icon-circle">
+                <i class="bi bi-envelope icon"></i>
+              </div>
+              <div class="info-text">
+                <p>Email</p>
+                <a
+                  href="mailto:walidkd208&#64;gmail.com?subject=Portfolio%20Contact&body=Hi%20Walid,"
+                  >walidkd208&#64;gmail.com</a
+                >
+              </div>
             </div>
-            <div class="text-box">
-              <p class="email-subtitle">Email</p>
-              <a class="email" href="mailto:walidkd208&#64;gmail.com?subject=Portfolio%20Contact&body=Hi%20Walid,">walidkd208&#64;gmail.com</a>
+            <div class="info-item">
+              <div class="icon-circle">
+                <i class="bi bi-telephone icon"></i>
+              </div>
+              <div class="info-text">
+                <p>Phone</p>
+                <a href="tel:+5511988451813">+55 11 98845-1813</a>
+              </div>
             </div>
-           </div>
-           <div class="info-container">
-            <div class="icon-circle">
-              <i class="bi bi-telephone icon"></i>
+            <div class="info-item">
+              <div class="icon-circle">
+                <i class="bi bi-geo-alt icon"></i>
+              </div>
+              <div class="info-text">
+                <p>Location</p>
+                <p class="text">São Paulo, Brazil</p>
+              </div>
             </div>
-            <div class="text-box">
-              <p class="phone-subtitle">Phone</p>
-              <a class="phone" href="tel:+5511988451813">+55 11 98845-1813</a>
-            </div>
-           </div>
-           <div class="info-container">
-            <div class="icon-circle">
-              <i class="bi bi-geo-alt icon"></i>
-            </div>
-            <div class="text-box">
-              <p class="locale-subtitle">Location</p>
-              <p class="locale">São Paulo, Brazil</p>
-            </div>
-           </div>
-        </div>
-      </div>
-      <div class="contact-message">
-        <div class="message-container">
-          <h3 class="title">Send Me a Message</h3>
-          <div class="message-inputs">
-            <div class="input-container">
-              <label for="name">Name</label>
-              <input class="input" type="text" id="name" name="name">
-            </div>
-            <div class="input-container">
-              <label for="email">Email</label>
-              <input class="input" type="email" id="email" name="email">
-            </div>
-            <div class="input-container">
-              <label for="message">Message</label>
-              <input class="input" type="text" id="message" name="message">
+          </div>
+
+          <div class="social-section">
+            <h4>Follow Me</h4>
+            <div class="social-icons">
+              <a
+                class="linkedin"
+                href="https://www.linkedin.com/in/walid-daoud-293564211/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-linkedin icon"></i>
+              </a>
+              <a
+                class="github"
+                href="https://github.com/WalidcoDaoud"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-github icon"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="contact-form">
+        <form>
+          <h3>Send me a Message</h3>
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-button">
+            <i class="bi bi-send send"></i>
+            <span>Send Message</span>
+          </button>
+        </form>
+      </div>
+
     </div>
   </div>
 </section>

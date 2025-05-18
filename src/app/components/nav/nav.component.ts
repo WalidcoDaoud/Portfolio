@@ -38,13 +38,13 @@ export class NavComponent {
   constructor(private scrollService: ScrollService) {}
 
   scrollWithOffset(event: Event, href: string): void {
-  event.preventDefault();
-  const elementId = href.replace('#', '');
+    event.preventDefault();
+    const elementId = href.replace('#', '');
 
-  const extraOffset = 40;
+    const extraOffset = 40;
 
-  this.scrollService.scrollToElementById(elementId, extraOffset);
-}
+    this.scrollService.scrollToElementById(elementId, extraOffset);
+  }
 
   // toggleTheme() {
   //   this.darkMode = !this.darkMode

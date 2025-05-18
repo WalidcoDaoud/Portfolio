@@ -41,7 +41,7 @@ export class NavComponent {
     event.preventDefault();
     const elementId = href.replace('#', '');
 
-    const extraOffset = 40;
+    const extraOffset = 0;
 
     this.scrollService.scrollToElementById(elementId, extraOffset);
   }

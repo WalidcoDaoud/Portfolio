@@ -16,11 +16,11 @@ strong, em, b, i, u, small, mark, abbr, code, sub, sup
 
 
 // Brand Colors
-
-$primary: #2563EB
 $primary-color: #2563EB // REMOVE THIS AFTER GLOBAL CSS IS FINISHED
-$primary-dark: color.adjust($primary, $lightness: -10%)
-$primary-light: color.adjust($primary, $lightness: 10%)
+$primary-dark: color.adjust($primary-color, $lightness: -10%)
+$primary-light: color.adjust($primary-color, $lightness: 10%)
+$background-color: #F9FAFB
+$icon-background-color: #DBEAFE
 
 // Neutral Colors
 $black: #000
@@ -29,7 +29,7 @@ $gray-100: #F3F4F6
 $gray-200: #E5E7EB
 $gray-600: #4B5563
 $gray-900: #111827
-$blue-600: $primary
+$blue-600: $primary-color
 $blue-700: #1D4ED8
 
 // ======================
@@ -37,31 +37,15 @@ $blue-700: #1D4ED8
 // ======================
 
 // Navigation
-$nav-bg: $white
-$nav-text: $gray-600
 $nav-shadow: 0 2px 4px rgba(0, 0, 0, 0.05)
 $nav-border: 1px solid rgba(0, 0, 0, 0.05)
-
-$nav-link-text: $gray-600
-$nav-link-text-hover: $gray-900
-$nav-link-bg-hover: $gray-200
-$nav-link-active: $blue-600
-$nav-link-active-state: color.adjust($gray-200, $lightness: -8%)
-$nav-active-transform: scale(0.98)
-
-$nav-brand-text: $blue-600
-$nav-brand-text-hover: $blue-700
-
 $nav-focus-ring: 2px solid $blue-600
 
 // ======================
 // HEADER COLORS
 // ======================
 
-
-
 $job-color: #374151
-$subtitle-color: #111827
 $subtitle-description-color: #4B5563
 
 $secondary-border-color: #D1D5DB
@@ -69,11 +53,8 @@ $linkedin-icon: #0A66C2
 $linkedin-contact-icon: #1D4ED8
 $github-icon: #181717
 
-$background-color: #F9FAFB
 $experience-subtitle-color: #6B7280
-$icon-background-color: #DBEAFE
 $technical-description-color: #1F2937
-$technical-description-background-color: #E5E7EB
 
 $footer-background-color: #1F2937
 $footer-text-color: #D1D5DB
@@ -81,6 +62,4 @@ $footer-title-text-color: #9CA3AF
 $footer-line-color: #374151
 $footer-icon-color: #9CA3AF
 
-$success-message-background-color: #f0fdf4
-$success-message-color: #15803d
 $contact-box-shadow: #3b82f6

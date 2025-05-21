@@ -4,22 +4,35 @@
       <div class="home">
         <a class="home-link" href="#header">Walid Daoud</a>
       </div>
-      <div class="nav-items">
+
+      <div class="nav-items desktop">
         <div class="nav-links">
           <a
             *ngFor="let item of navItems"
-            href="{{ item.href }}"
+            [href]="item.href"
             (click)="scrollWithOffset($event, item.href)"
             class="item-link"
           >
-          {{ item.name }}
+            {{ item.name }}
           </a>
         </div>
       </div>
-      <!-- <div class="options">
-        <button (click)="toggleTheme()" class="theme-toggle"></button>
-        <i [ngClass]="darkMode ? 'fa-regular fa-sun' : 'fa-regular fa-moon'"></i>
-      </div> -->
+
+      <div class="menu-button" (click)="isMenuOpen = !isMenuOpen">
+        <span *ngIf="!isMenuOpen">&#9776;</span> <!-- ☰ -->
+        <span *ngIf="isMenuOpen">&times;</span>   <!-- × -->
+      </div>
+    </div>
+
+    <div class="mobile-nav" *ngIf="isMenuOpen">
+      <a
+        *ngFor="let item of navItems"
+        [href]="item.href"
+        (click)="scrollWithOffset($event, item.href); closeMenu()"
+        class="item-link"
+      >
+        {{ item.name }}
+      </a>
     </div>
   </div>
 </nav>

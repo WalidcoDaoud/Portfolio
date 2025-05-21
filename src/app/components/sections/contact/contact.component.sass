@@ -1,15 +1,13 @@
-@use '../../../../styles'
+@use '../../../../styles' as contact
 
 .contact-section
   padding: 4rem 0
-  background-color: styles.$background-color
+  background-color: contact.$background-color
 
   .contact-container
     max-width: 80rem
-    margin-left: auto
-    margin-right: auto
-    padding-left: 1rem
-    padding-right: 1rem
+    margin: 0 auto
+    padding: 0 auto
 
     .contact-header
       margin-bottom: 3rem
@@ -18,7 +16,7 @@
       .title
         font-size: 1.875rem
         line-height: 2.25rem
-        color: styles.$gray-900
+        color: contact.$gray-900
         font-weight: 700
 
       .line
@@ -27,7 +25,7 @@
         width: 5rem
         margin-left: auto
         margin-right: auto
-        background-color: styles.$primary-color
+        background-color: contact.$primary-color
 
       .contact-text
         margin-top: 1rem
@@ -36,7 +34,7 @@
         max-width: 42rem
         margin-left: auto
         margin-right: auto
-        color: styles.$gray-600
+        color: contact.$gray-600
 
   .contact-content
     display: flex
@@ -48,7 +46,7 @@
       width: 30%
 
       .info-card
-        background-color: styles.$white
+        background-color: contact.$white
         padding: 1.5rem
         border-radius: 0.5rem
         height: 90%
@@ -57,7 +55,7 @@
           font-size: 1.25rem
           line-height: 1.75rem
           font-weight: 600
-          color: styles.$gray-900
+          color: contact.$gray-900
           margin-bottom: 1.5rem
 
         .info-items
@@ -77,10 +75,10 @@
               align-items: center
               justify-content: center
               border-radius: 9999px
-              background-color: styles.$icon-background-color
+              background-color: contact.$icon-background-color
 
               .icon
-                color: styles.$primary-color
+                color: contact.$primary-color
 
             .info-text
               margin-left: 1rem
@@ -89,17 +87,17 @@
                 font-size: 0.875rem
                 line-height: 1.25rem
                 font-weight: 500
-                color: styles.$gray-900
+                color: contact.$gray-900
 
               a, .text
                 font-size: 0.875rem
                 line-height: 1.25rem
                 text-decoration: none
-                color: styles.$gray-600
+                color: contact.$gray-600
                 transition: color 0.2s ease
 
                 &:hover
-                  color: styles.$primary-color
+                  color: contact.$primary-color
 
         .social-section
           margin-top: 2rem
@@ -109,26 +107,26 @@
             line-height: 1.5rem
             font-weight: 500
             margin-bottom: 1rem
-            color: styles.$gray-900
+            color: contact.$gray-900
 
           .social-icons
             display: flex
             gap: 1rem
 
             a
-              color: styles.$gray-600
+              color: contact.$gray-600
               transition: color 0.2s ease
               font-size: 1.5rem
 
               &:hover
                 &.linkedin
-                  color: styles.$linkedin-contact-icon
+                  color: contact.$linkedin-contact-icon
 
                 &.github
-                  color: styles.$gray-900
+                  color: contact.$gray-900
 
                 &:not(.github):not(.linkedin)
-                  color: styles.$primary-color
+                  color: contact.$primary-color
 
               .icon
                 height: 1.5rem
@@ -138,7 +136,7 @@
       width: 70%
 
       form
-        background-color: styles.$white
+        background-color: contact.$white
         padding: 1.5rem
         border-radius: 0.5rem
         height: 90%
@@ -148,7 +146,7 @@
           line-height: 1.75rem
           font-weight: 600
           margin-bottom: 1.5rem
-          color: styles.$gray-900
+          color: contact.$gray-900
 
         .form-group
           margin-bottom: 1.5rem
@@ -159,20 +157,20 @@
             font-size: 0.875rem
             line-height: 1.25rem
             font-weight: 500
-            color: styles.$job-color
+            color: contact.$job-color
             margin-bottom: 0.25rem
 
           input, textarea
             width: 100%
             padding: 0.5rem 0.75rem
-            border: 1px solid styles.$secondary-border-color
+            border: 1px solid contact.$secondary-border-color
             border-radius: 0.375rem
             outline: none
             transition: all 0.2s ease
 
             &:focus
               border-color: transparent
-              box-shadow: 0 0 0 2px styles.$contact-box-shadow
+              box-shadow: 0 0 0 2px contact.$contact-box-shadow
 
           textarea
             min-height: 8rem
@@ -183,16 +181,30 @@
           align-items: center
           justify-content: center
           padding: 0.75rem 1.5rem
-          background-color: styles.$primary-color
-          color: styles.$white
+          background-color: contact.$primary-color
+          color: contact.$white
           border-radius: 0.5rem
           font-weight: 500
           transition: background-color 0.2 ease
-          width: 100%
+          gap: 1rem
 
           &:hover:not(:disabled)
-            background-color: styles.$linkedin-contact-icon
+            background-color: contact.$linkedin-contact-icon
 
           &:disabled
             opacity: 0.7
             cursor: not-allowed
+
+  @media screen and (max-width: contact.$max-mobile-width)
+    .contact-container
+      padding: 0 2rem
+      .contact-content
+        flex-direction: column
+        gap: 3rem
+
+        .contact-info,
+        .contact-form
+          width: 100%
+
+          .submit-button
+            width: 100%

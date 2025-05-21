@@ -1,4 +1,4 @@
-@use '../../../../styles.sass'
+@use '../../../../styles.sass' as skills
 @use 'sass:color'
 
 .skills-section
@@ -12,7 +12,7 @@
 
     .title
       font-size: 2.25rem
-      color: styles.$gray-900
+      color: skills.$gray-900
       margin: 0
       font-weight: 700
 
@@ -20,7 +20,7 @@
       margin: 0.5rem auto 1rem auto
       height: 0.25rem
       width: 5rem
-      background-color: styles.$primary-color
+      background-color: skills.$primary-color
 
     .technical-skills-section
       margin-bottom: 4rem
@@ -28,7 +28,7 @@
       .technical-skills-title
         font-size: 2rem
         font-weight: 600
-        color: styles.$technical-description-color
+        color: skills.$technical-description-color
         margin-bottom: 2rem
         text-align: center
 
@@ -39,7 +39,7 @@
         padding: 1rem
 
         .skill-card
-          background-color: styles.$background-color
+          background-color: skills.$background-color
           padding: 1.25rem
           border-radius: 0.5rem
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05)
@@ -55,24 +55,27 @@
             margin-bottom: 0.75rem
 
             .skill-name
-              color: styles.$technical-description-color
+              color: skills.$technical-description-color
               font-weight: 500
               font-size: 1rem
 
             .skill-level
-              color: styles.$gray-600
+              color: skills.$gray-600
               font-size: 0.875rem
               font-weight: 500
 
           .skill-bar-background
             width: 100%
-            background-color: styles.$gray-200
+            background-color: skills.$gray-200
             border-radius: 9999px
             height: 0.625rem
             overflow: hidden
 
             .skill-bar-fill
-              background: linear-gradient(90deg, styles.$primary-color, color.adjust(styles.$primary-color, $lightness: 10%))
+              background: linear-gradient(90deg, skills.$primary-color, color.adjust(skills.$primary-color, $lightness: 10%))
               height: 100%
               border-radius: 9999px
               transition: width 0.4s ease-in-out
+
+  @media screen and (max-width: skills.$max-mobile-width)
+    padding: 1rem

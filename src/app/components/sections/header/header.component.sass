@@ -11,6 +11,7 @@
     width: 80%
     justify-content: space-around
     align-items: center
+    gap: 2rem
 
     .container-header
       display: flex
@@ -33,13 +34,17 @@
 
       .professional-tagline
         color: header.$gray-600
-        width: 32rem
+        width: 100%
         margin-bottom: 1rem
 
       .buttons
         display: flex
         gap: 1.25rem
         margin-bottom: 1rem
+        flex-direction: column
+
+        @media screen and (max-width: header.$max-mobile-width)
+          flex-direction: row
 
         .btn
           padding: 1rem
@@ -104,3 +109,9 @@
         object-fit: cover
         border-radius: 50%
 
+    @media screen and (max-width: header.$max-mobile-width)
+      flex-direction: column
+      gap: 3rem
+
+      .container-header
+        width: 100%

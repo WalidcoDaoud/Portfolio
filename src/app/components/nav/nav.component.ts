@@ -34,16 +34,19 @@ export class NavComponent {
     },
   ];
   // darkMode = false;
+  isMenuOpen = false;
 
   constructor(private scrollService: ScrollService) {}
 
   scrollWithOffset(event: Event, href: string): void {
     event.preventDefault();
     const elementId = href.replace('#', '');
-
     const extraOffset = 0;
-
     this.scrollService.scrollToElementById(elementId, extraOffset);
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
   }
 
   // toggleTheme() {

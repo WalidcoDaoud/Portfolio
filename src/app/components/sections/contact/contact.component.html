@@ -71,28 +71,122 @@
       </div>
 
       <div class="contact-form">
-        <form #emailForm="ngForm" (ngSubmit)="sendEmail(emailForm)">
-          <mat-form-field appearance="outline">
+        <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
+          <h3>Send me a message</h3>
+
+          <mat-form-field appearance="outline" class="form-field">
             <mat-label>Name</mat-label>
-            <input matInput name="name" ngModel required />
+            <input matInput formControlName="name" placeholder="Your name" />
+            <mat-error
+              class="error"
+              *ngIf="
+                emailForm.get('name')?.invalid &&
+                (emailForm.get('name')?.touched || emailForm.get('name')?.dirty)
+              "
+            >
+              <div *ngIf="emailForm.get('name')?.errors?.['required']">
+                Name is required
+              </div>
+              <div *ngIf="emailForm.get('name')?.errors?.['minlength']">
+                Minimum 2 characters required
+              </div>
+              <div *ngIf="emailForm.get('name')?.errors?.['maxlength']">
+                Maximum 50 characters allowed
+              </div>
+              <div *ngIf="emailForm.get('name')?.errors?.['pattern']">
+                Only letters and spaces allowed
+              </div>
+            </mat-error>
           </mat-form-field>
 
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" class="form-field">
             <mat-label>Email</mat-label>
-            <input matInput type="email" name="email" ngModel required />
+            <input
+              matInput
+              type="email"
+              formControlName="email"
+              placeholder="your.email@example.com"
+            />
+            <mat-error
+              class="error"
+              *ngIf="
+                emailForm.get('email')?.invalid &&
+                (emailForm.get('email')?.touched ||
+                  emailForm.get('email')?.dirty)
+              "
+            >
+              <div *ngIf="emailForm.get('email')?.errors?.['required']">
+                Email is required
+              </div>
+              <div *ngIf="emailForm.get('email')?.errors?.['email']">
+                Please enter a valid email address
+              </div>
+            </mat-error>
           </mat-form-field>
 
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" class="form-field">
             <mat-label>Subject</mat-label>
-            <input matInput name="subject" ngModel required />
+            <input
+              matInput
+              formControlName="subject"
+              placeholder="Message subject"
+            />
+            <mat-error
+              class="error"
+              *ngIf="
+                emailForm.get('subject')?.invalid &&
+                (emailForm.get('subject')?.touched ||
+                  emailForm.get('subject')?.dirty)
+              "
+            >
+              <div *ngIf="emailForm.get('subject')?.errors?.['required']">
+                Subject is required
+              </div>
+              <div *ngIf="emailForm.get('subject')?.errors?.['minlength']">
+                Minimum 5 characters required
+              </div>
+              <div *ngIf="emailForm.get('subject')?.errors?.['maxlength']">
+                Maximum 100 characters allowed
+              </div>
+            </mat-error>
           </mat-form-field>
 
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" class="form-field">
             <mat-label>Message</mat-label>
-            <textarea matInput name="message" ngModel required></textarea>
+            <textarea
+              matInput
+              formControlName="message"
+              placeholder="Your message here..."
+              rows="5"
+            ></textarea>
+            <mat-error
+              class="error"
+              *ngIf="
+                emailForm.get('message')?.invalid &&
+                (emailForm.get('message')?.touched ||
+                  emailForm.get('message')?.dirty)
+              "
+            >
+              <div *ngIf="emailForm.get('message')?.errors?.['required']">
+                Message is required
+              </div>
+              <div *ngIf="emailForm.get('message')?.errors?.['minlength']">
+                Minimum 10 characters required
+              </div>
+              <div *ngIf="emailForm.get('message')?.errors?.['maxlength']">
+                Maximum 500 characters allowed
+              </div>
+            </mat-error>
           </mat-form-field>
 
-          <button mat-raised-button color="primary" type="submit">Send</button>
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="emailForm.invalid"
+          >
+            Send Message
+          </button>
         </form>
       </div>
     </div>

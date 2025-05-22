@@ -1,0 +1,37 @@
+@use '../../../../styles' as modal
+
+.main-container
+  padding: 1.5rem
+  width: 25rem
+
+  h2.mat-dialog-title
+    color: modal.$primary-color !important
+    font-size: 1.5rem
+    font-weight: 500
+    margin-bottom: 1rem
+    padding-bottom: 0.5rem
+
+  .mat-dialog-content
+    color: modal.$gray-600 !important
+    font-size: 1rem
+    line-height: 1.5
+    margin-bottom: 1.5rem
+    padding: 0.5rem 0
+
+  .mat-dialog-actions
+    padding: 0.5rem 0 0 0
+    margin-bottom: -0.5rem
+
+    button
+      text-transform: uppercase
+      letter-spacing: 0.5px
+      font-weight: 500
+      padding: 0 1rem
+
+      &[mat-button]
+        color: modal.$primary-color !important
+
+        &:hover
+          background-color: rgba(63, 81, 181, 0.04)
+
+//styles not working for some reason, need to investigate more

@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { NgForm, FormsModule } from '@angular/forms';
+import { FormsModule, Validators, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import emailjs from '@emailjs/browser';
@@ -15,18 +15,46 @@ import { EmailModalComponent } from '../../modal/email-modal/email-modal.compone
     CommonModule,
     FormsModule,
     MatFormFieldModule,
+    ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.sass'
 })
 export class ContactComponent {
+  emailForm: FormGroup;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private fb: FormBuilder) {
+    this.emailForm = this.fb.group({
+      name: ['', [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(50),
+        Validators.pattern('[a-zA-Z ]*')
+      ]],
+      email: ['', [
+        Validators.required,
+        Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}')
+      ]],
+      subject: ['', [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(100)
+      ]],
+      message: ['', [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(500)
+      ]]
+    });
+  }
 
-  public sendEmail(form: NgForm) {
-    if (form.invalid) {
+  public sendEmail() {
+    if (this.emailForm.invalid) {
+      // Mark all fields as touched to show errors
+      this.emailForm.markAllAsTouched();
       return;
     }
 
@@ -34,10 +62,10 @@ export class ContactComponent {
       'service_t3bwjym',
       'template_x4anis9',
       {
-        from_name: form.value.name,
-        from_email: form.value.email,
-        subject: form.value.subject,
-        message: form.value.message,
+        from_name: this.emailForm.value.name,
+        from_email: this.emailForm.value.email,
+        subject: this.emailForm.value.subject,
+        message: this.emailForm.value.message,
       },
       'foLK3gWTFMKvgKfYH'
     )
@@ -48,7 +76,7 @@ export class ContactComponent {
           message: 'Message sent successfully!'
         }
       });
-      form.resetForm();
+      this.emailForm.reset();
     })
     .catch((error) => {
       console.error('Failed to send email:', error);

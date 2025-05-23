@@ -71,7 +71,7 @@
       </div>
 
       <div class="contact-form">
-        <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
+        <form [formGroup]="emailForm" (ngSubmit)="sendEmail()" *ngIf="emailForm">
           <h3>Send me a message</h3>
 
           <mat-form-field appearance="outline" class="form-field">
@@ -180,12 +180,17 @@
           </mat-form-field>
 
           <button
+            #submitButton
             mat-raised-button
             color="primary"
             type="submit"
-            [disabled]="emailForm.invalid"
+            [disabled]="emailForm.invalid || isSending || isSubmitted"
           >
-            Send Message
+            <span *ngIf="!isSending && !isSent">Send Message</span>
+            <span *ngIf="isSending">
+              <mat-spinner diameter="20" color="accent"></mat-spinner>
+            </span>
+            <span *ngIf="isSent && !isSending">Message Sent!</span>
           </button>
         </form>
       </div>

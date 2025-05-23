@@ -1,8 +1,8 @@
-@use '../../../styles'
+@use '../../../styles' as footer
 
 .footer-section
-  background-color: styles.$footer-background-color
-  color: styles.$footer-text-color
+  background-color: footer.$footer-background-color
+  color: footer.$footer-text-color
   margin: 0 auto
   padding: 5rem 1rem
 
@@ -11,12 +11,15 @@
     margin: 0 auto
     padding: 0 1rem
 
+    @media screen and (max-width: footer.$max-mobile-width)
+      padding: 0
+
     .container
       display: flex
       flex-direction: row
       justify-content: space-between
       align-items: center
-      gap: 2rem
+      gap: 1rem
 
       .info
         display: flex
@@ -30,7 +33,7 @@
 
         .title
           font-size: 0.875rem
-          color: styles.$footer-title-text-color
+          color: footer.$footer-title-text-color
 
       .social-icons
         display: flex
@@ -45,10 +48,10 @@
 
           &:hover
             transform: scale(1.3)
-            color: styles.$white
+            color: footer.$white
 
         a
-          color: styles.$footer-icon-color
+          color: footer.$footer-icon-color
           font-size: 2rem
 
       .contact
@@ -65,17 +68,17 @@
 
           a
             text-decoration: none
-            color: styles.$footer-title-text-color
+            color: footer.$footer-title-text-color
 
           .city
-            color: styles.$footer-title-text-color
+            color: footer.$footer-title-text-color
 
         .email:hover
             transform: scale(1.1)
 
             .email-text:hover,
             .envelope-icon
-              color: styles.$white
+              color: footer.$white
 
 
     .bottom
@@ -83,5 +86,5 @@
       flex-direction: column
       justify-content: center
       align-items: center
-      border-top: 1px solid styles.$footer-line-color
-      padding: 1.875rem
+      border-top: 1px solid footer.$footer-line-color
+      padding: 1rem

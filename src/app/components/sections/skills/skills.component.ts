@@ -22,7 +22,7 @@ export class SkillsComponent {
     { name: 'Node.js', level: 'Basic' },
     { name: 'Bootstrap', level: 'Intermediate' },
     { name: 'RESTful APIs', level: 'Intermediate' },
-    { name: 'SSMS', level: 'Intermediate' },
+    { name: 'SQL Server', level: 'Intermediate' },
     { name: 'MongoDB', level: 'Intermediate' },
     { name: 'Azure', level: 'Intermediate' },
     { name: 'CI/CD', level: 'Intermediate' },

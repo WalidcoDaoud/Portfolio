@@ -67,3 +67,60 @@ $footer-line-color: #374151
 $footer-icon-color: #9CA3AF
 
 $contact-box-shadow: #3b82f6
+
+// ======================
+// Dark mode
+// ======================
+
+$dark-background: #222831
+$dark-secondary-background: #393E46
+
+$dark-nav-text: #F9F7F7
+$dark-nav-hover-home: #FFFBE9
+$dark-nav-beige : #E3CAA5
+
+$dark-header-text:#F9F7F7
+$dark-header-beige: #E3CAA5
+
+body.dark-mode
+  .nav-container
+    background-color: $dark-background !important
+    border-bottom: 1px solid #333
+
+    .home-link
+      color: $dark-nav-hover-home !important
+
+      &:hover
+        color: $dark-nav-beige !important
+
+    .item-link
+      color: $dark-nav-text!important
+
+      &:hover
+        color: $dark-nav-text !important
+        background-color: $dark-nav-beige !important
+
+      &:focus
+        outline: 2px solid $dark-nav-text !important
+
+      &:active
+        background-color: #2a3e4c !important
+
+  .header-section
+    background-color: $dark-secondary-background !important
+
+    .header-text
+      color: $dark-header-text !important
+
+    .name-text
+      color: $dark-header-beige !important
+
+    .linkedin-icon,
+    .github-icon
+      color: $white !important
+
+    .primary
+      background-color: $dark-header-beige !important
+
+    .profile-photo
+      border: 4px solid $dark-header-beige !important

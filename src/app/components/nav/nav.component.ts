@@ -11,6 +11,7 @@ import { ScrollService } from '../../services/scroll.service';
   styleUrl: './nav.component.sass',
 })
 export class NavComponent {
+
   navItems = [
     {
       name: 'Home',
@@ -33,7 +34,8 @@ export class NavComponent {
       href: '#contact',
     },
   ];
-  // darkMode = false;
+
+  isDarkMode = false;
   isMenuOpen = false;
 
   constructor(private scrollService: ScrollService) {}
@@ -49,8 +51,14 @@ export class NavComponent {
     this.isMenuOpen = false;
   }
 
-  // toggleTheme() {
-  //   this.darkMode = !this.darkMode
-  //   document.body.classList.toggle('dark-mode', this.darkMode);
-  // }
+  toggleDarkMode(): void {
+    this.isDarkMode = !this.isDarkMode;
+
+    if (this.isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }
+
 }

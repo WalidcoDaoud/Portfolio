@@ -15,12 +15,13 @@
           >
             {{ item.name }}
           </a>
+          <button class="item-link" (click)="toggleDarkMode()"><i class="bi bi-moon-fill"></i></button>
         </div>
       </div>
 
       <div class="menu-button" (click)="isMenuOpen = !isMenuOpen">
-        <span *ngIf="!isMenuOpen">&#9776;</span> <!-- ☰ -->
-        <span *ngIf="isMenuOpen">&times;</span>   <!-- × -->
+        <span *ngIf="!isMenuOpen">&#9776;</span>
+        <span *ngIf="isMenuOpen">&times;</span>
       </div>
     </div>
 

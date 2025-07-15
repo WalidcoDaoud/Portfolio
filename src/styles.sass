@@ -77,12 +77,20 @@ $dark-secondary-background: #393E46
 
 $dark-nav-text: #F9F7F7
 $dark-nav-hover-home: #FFFBE9
-$dark-nav-beige : #E3CAA5
+$dark-nav-beige: #E3CAA5
 
-$dark-header-text:#F9F7F7
+$dark-header-text: #F9F7F7
 $dark-header-beige: #E3CAA5
 
+$dark-about-text: #F9F7F7
+$dark-about-beige: #E3CAA5
+
 body.dark-mode
+
+  // ======================
+  // Nav bar
+  // ======================
+
   .nav-container
     background-color: $dark-background !important
     border-bottom: 1px solid #333
@@ -106,6 +114,10 @@ body.dark-mode
       &:active
         background-color: #2a3e4c !important
 
+  // ======================
+  // Header
+  // ======================
+
   .header-section
     background-color: $dark-secondary-background !important
 
@@ -124,3 +136,53 @@ body.dark-mode
 
     .profile-photo
       border: 4px solid $dark-header-beige !important
+
+  // ======================
+  // About
+  // ======================
+
+  .about-container
+    background-color: $dark-background !important
+
+    .title
+      color: $dark-about-beige !important
+
+    .line
+      background-color: $dark-about-text !important
+
+    .story-title
+      color: $dark-about-beige !important
+
+    .story-text
+      color: $dark-about-text !important
+
+    .section-title
+      color: $dark-about-beige !important
+
+    .experience-item
+      &::before
+        background: linear-gradient(to bottom, $dark-about-beige, transparent) !important
+
+    .experience-icon
+      background-color: $dark-about-beige !important
+
+      .icon-blue
+        color: $black !important
+
+    .experience-title
+      color: $dark-about-beige !important
+
+    .experience-meta
+      color: $dark-about-text !important
+
+    .experience-description
+      color: $dark-about-text !important
+
+    li
+      color: $dark-about-text !important
+
+      &::before
+        color: $dark-about-beige !important
+
+      strong
+        color: $dark-about-beige !important

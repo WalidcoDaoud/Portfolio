@@ -75,15 +75,12 @@ $contact-box-shadow: #3b82f6
 $dark-background: #222831
 $dark-secondary-background: #393E46
 
-$dark-nav-text: #F9F7F7
+$dark-gold: #E3CAA5
+$dark-text: #F9F7F7
 $dark-nav-hover-home: #FFFBE9
-$dark-nav-beige: #E3CAA5
 
-$dark-header-text: #F9F7F7
-$dark-header-beige: #E3CAA5
+$dark-gold: #E3CAA5
 
-$dark-about-text: #F9F7F7
-$dark-about-beige: #E3CAA5
 
 body.dark-mode
 
@@ -99,17 +96,17 @@ body.dark-mode
       color: $dark-nav-hover-home !important
 
       &:hover
-        color: $dark-nav-beige !important
+        color: $dark-gold !important
 
     .item-link
-      color: $dark-nav-text!important
+      color: $dark-text!important
 
       &:hover
-        color: $dark-nav-text !important
-        background-color: $dark-nav-beige !important
+        color: $dark-text !important
+        background-color: $dark-gold !important
 
       &:focus
-        outline: 2px solid $dark-nav-text !important
+        outline: 2px solid $dark-text !important
 
       &:active
         background-color: #2a3e4c !important
@@ -123,20 +120,20 @@ body.dark-mode
     // background-color: $dark-secondary-background !important
 
     .header-text
-      color: $dark-header-text !important
+      color: $dark-text !important
 
     .name-text
-      color: $dark-header-beige !important
+      color: $dark-gold !important
 
     .linkedin-icon,
     .github-icon
       color: $white !important
 
     .primary
-      background-color: $dark-header-beige !important
+      background-color: $dark-gold !important
 
     .profile-photo
-      border: 4px solid $dark-header-beige !important
+      border: 4px solid $dark-gold !important
 
   // ======================
   // About Section
@@ -147,47 +144,47 @@ body.dark-mode
     // background-color: $dark-background !important
 
     .title
-      color: $dark-about-beige !important
+      color: $dark-gold !important
 
     .line
-      background-color: $dark-about-text !important
+      background-color: $dark-text !important
 
     .story-title
-      color: $dark-about-beige !important
+      color: $dark-gold !important
 
     .story-text
-      color: $dark-about-text !important
+      color: $dark-text !important
 
     .section-title
-      color: $dark-about-beige !important
+      color: $dark-gold !important
 
     .experience-item
       &::before
-        background: linear-gradient(to bottom, $dark-about-beige, transparent) !important
+        background: linear-gradient(to bottom, $dark-gold, transparent) !important
 
     .experience-icon
-      background-color: $dark-about-beige !important
+      background-color: $dark-gold !important
 
       .icon-blue
         color: $black !important
 
     .experience-title
-      color: $dark-about-beige !important
+      color: $dark-gold !important
 
     .experience-meta
-      color: $dark-about-text !important
+      color: $dark-text !important
 
     .experience-description
-      color: $dark-about-text !important
+      color: $dark-text !important
 
     li
-      color: $dark-about-text !important
+      color: $dark-text !important
 
       &::before
-        color: $dark-about-beige !important
+        color: $dark-gold !important
 
       strong
-        color: $dark-about-beige !important
+        color: $dark-gold !important
 
   // ======================
   // Skills Section
@@ -197,22 +194,22 @@ body.dark-mode
     background: linear-gradient(to top, $dark-background 50%, $dark-secondary-background 100%) !important
 
     .title
-      color: $dark-about-beige !important
+      color: $dark-gold !important
 
     .line
-      background-color: $dark-about-text !important
+      background-color: $dark-text !important
 
     .technical-skills-title
-      color: $dark-about-text !important
+      color: $dark-text !important
 
     .skill-card
-      background-color: $dark-about-beige !important
+      background-color: $dark-gold !important
 
     .skill-name
-      color: $dark-about-text !important
+      color: $dark-text !important
 
     .skill-level
-      color: $dark-about-text !important
+      color: $dark-text !important
 
     .skill-bar-background
       background-color: $dark-secondary-background
@@ -225,19 +222,32 @@ body.dark-mode
     background: linear-gradient(to top, $dark-secondary-background 0%, $dark-background 100%) !important
 
   .title
-    color: $dark-about-beige !important
+    color: $dark-gold !important
 
   .line
-    background-color: $dark-about-text !important
+    background-color: $dark-text !important
 
   .contact-text
-    color: $dark-about-text !important
+    color: $dark-text !important
 
   .icon-circle
-    background-color: $dark-about-beige !important
+    background-color: $dark-gold !important
 
     .icon
       color: $black !important
 
   button
-    color: $dark-about-beige !important
+    color: $dark-gold !important
+
+  // ======================
+  // Footer Section
+  // ======================
+
+  .footer-section
+    background-color: $dark-background
+
+  .name
+    color: $dark-gold !important
+
+  .title
+    color: $dark-text !important

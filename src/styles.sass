@@ -115,11 +115,12 @@ body.dark-mode
         background-color: #2a3e4c !important
 
   // ======================
-  // Header
+  // Header Section
   // ======================
 
   .header-section
-    background-color: $dark-secondary-background !important
+    background: linear-gradient(to top, $dark-background 50%, $dark-secondary-background 100%) !important
+    // background-color: $dark-secondary-background !important
 
     .header-text
       color: $dark-header-text !important
@@ -138,11 +139,12 @@ body.dark-mode
       border: 4px solid $dark-header-beige !important
 
   // ======================
-  // About
+  // About Section
   // ======================
 
   .about-container
-    background-color: $dark-background !important
+    background: linear-gradient(to top, $dark-secondary-background 0%, $dark-background 50%) !important
+    // background-color: $dark-background !important
 
     .title
       color: $dark-about-beige !important
@@ -186,3 +188,31 @@ body.dark-mode
 
       strong
         color: $dark-about-beige !important
+
+  // ======================
+  // Skills Section
+  // ======================
+
+  .skills-section
+    background: linear-gradient(to top, $dark-background 50%, $dark-secondary-background 100%) !important
+
+    .title
+      color: $dark-about-beige !important
+
+    .line
+      background-color: $dark-about-text !important
+
+    .technical-skills-title
+      color: $dark-about-text !important
+
+    .skill-card
+      background-color: $dark-about-beige !important
+
+    .skill-name
+      color: $dark-about-text !important
+
+    .skill-level
+      color: $dark-about-text !important
+
+    .skill-bar-background
+      background-color: $dark-secondary-background

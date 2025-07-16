@@ -2,9 +2,10 @@
 @use 'sass:color'
 
 .skills-section
-  max-width: 80rem
+  // max-width: 80rem
   margin: 0 auto
-  padding: 5rem
+  padding: 5rem 20rem
+  transition: all 0.3s ease
 
   .skills-container
     text-align: center
@@ -15,12 +16,14 @@
       color: skills.$gray-900
       margin: 0
       font-weight: 700
+      transition: all 0.3s ease
 
     .line
       margin: 0.5rem auto 1rem auto
       height: 0.25rem
       width: 5rem
       background-color: skills.$primary-color
+      transition: all 0.3s ease
 
     .technical-skills-section
       margin-bottom: 4rem
@@ -31,6 +34,7 @@
         color: skills.$technical-description-color
         margin-bottom: 2rem
         text-align: center
+        transition: all 0.3s ease
 
       .skills-grid
         display: grid
@@ -44,6 +48,7 @@
           border-radius: 0.5rem
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05)
           transition: transform 0.2s ease
+          transition: all 0.3s ease
 
           &:hover
             transform: translateY(-4px)
@@ -58,11 +63,13 @@
               color: skills.$technical-description-color
               font-weight: 500
               font-size: 1rem
+              transition: all 0.3s ease
 
             .skill-level
               color: skills.$gray-600
               font-size: 0.875rem
               font-weight: 500
+              transition: all 0.3s ease
 
           .skill-bar-background
             width: 100%
@@ -70,6 +77,7 @@
             border-radius: 9999px
             height: 0.625rem
             overflow: hidden
+            transition: all 0.3s ease
 
             .skill-bar-fill
               background: linear-gradient(90deg, skills.$primary-color, color.adjust(skills.$primary-color, $lightness: 10%))

@@ -64,8 +64,9 @@
             &:hover
               color: nav.$gray-900
               background-color: nav.$gray-200
-              transform: translateY(-1px)
-              transition-duration: 0.1s
+              transform: translateY(-3px)
+              box-shadow: 0 0 12px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1)
+              transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease, color 0.3s ease
 
             &:focus
               outline: nav.$nav-focus-ring
@@ -75,6 +76,10 @@
               background-color: color.adjust(nav.$gray-200, $lightness: -5%)
               transition-duration: 0.05s
               transform: translateY(0) scale(0.98)
+
+          .download-button
+            display: flex
+            gap: 1rem
 
       .menu-button
         display: none

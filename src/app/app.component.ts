@@ -22,8 +22,4 @@ import { NavComponent } from "./components/nav/nav.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
-export class AppComponent {
-  ngOnInit() {
-  document.body.classList.add('dark-mode');
-}
-}
+export class AppComponent {}

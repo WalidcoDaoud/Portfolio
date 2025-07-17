@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ScrollService } from '../../services/scroll.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ScrollService } from '../../services/scroll.service';
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.sass',
 })
-export class NavComponent {
+export class NavComponent implements OnInit{
 
   navItems = [
     {
@@ -35,10 +35,17 @@ export class NavComponent {
     },
   ];
 
-  isDarkMode = false;
+  isDarkMode = true;
   isMenuOpen = false;
 
   constructor(private scrollService: ScrollService) {}
+
+  ngOnInit(): void {
+    const savedMode = localStorage.getItem('darkMode');
+    this.isDarkMode = savedMode ? savedMode === 'true' : true;
+
+    this.updateBodyClass();
+  }
 
   scrollWithOffset(event: Event, href: string): void {
     event.preventDefault();
@@ -51,14 +58,18 @@ export class NavComponent {
     this.isMenuOpen = false;
   }
 
-  toggleDarkMode(): void {
+  toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
+    localStorage.setItem('darkMode', this.isDarkMode.toString());
 
+    this.updateBodyClass();
+  }
+
+  private updateBodyClass() {
     if (this.isDarkMode) {
       document.body.classList.add('dark-mode');
     } else {
       document.body.classList.remove('dark-mode');
     }
   }
-
 }

@@ -7,28 +7,18 @@
 
       <div class="nav-items desktop">
         <div class="nav-links">
-          <a
-            *ngFor="let item of navItems"
-            [href]="item.href"
-            (click)="scrollWithOffset($event, item.href)"
-            class="item-link"
-          >
+          <a *ngFor="let item of navItems" [href]="item.href" (click)="scrollWithOffset($event, item.href)"
+            class="item-link">
             {{ item.name }}
           </a>
 
-          <a
-            href="/Walid-Alsaid-Daoud-CV.pdf"
-            download
-            class="item-link download-button"
-          >
+          <a href="/Walid-Alsaid-Daoud-CV.pdf" download class="item-link download-button">
             <i class="bi bi-download"></i>
             <span>Download CV</span>
           </a>
 
           <button class="item-link" (click)="toggleDarkMode()">
-            <i
-              [ngClass]="isDarkMode ? 'bi bi-moon-fill' : 'bi bi-sun-fill'"
-            ></i>
+            <i [ngClass]="isDarkMode ? 'bi bi-moon-fill' : 'bi bi-sun-fill'"></i>
           </button>
         </div>
       </div>
@@ -40,19 +30,11 @@
     </div>
 
     <div class="mobile-nav" *ngIf="isMenuOpen">
-      <a
-        *ngFor="let item of navItems"
-        [href]="item.href"
-        (click)="scrollWithOffset($event, item.href); closeMenu()"
-        class="item-link"
-      >
+      <a *ngFor="let item of navItems" [href]="item.href" (click)="scrollWithOffset($event, item.href); closeMenu()"
+        class="item-link">
         {{ item.name }}
       </a>
-      <a
-        href="/Walid-Alsaid-Daoud-CV.pdf"
-        download
-        class="item-link download-button"
-      >
+      <a href="/Walid-Alsaid-Daoud-CV.pdf" download class="item-link download-button">
         <i class="bi bi-download"></i>
         <span>Download CV</span>
       </a>
